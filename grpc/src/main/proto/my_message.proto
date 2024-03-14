@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "message";
+option java_outer_classname = "MessageProto";
+
+message Message {
+    string id = 1;
+    string content = 2;
+    string timestamp = 3;
+}
+
+message MessageResponse {
+    string responseMessage = 1;
+}
+
+service MessageService {
+    rpc SendMessage(Message) returns (MessageResponse);
+}
